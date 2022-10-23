@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.DefaultBoundedRangeModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -59,7 +60,6 @@ public class server extends JFrame {
             // Log
             log("New connection with client# " + this.clientNumber + " at " + socketOfServer);
         }
-
         @Override
         public void run() {
 
@@ -70,24 +70,47 @@ public class server extends JFrame {
                 BufferedWriter os = new BufferedWriter(new OutputStreamWriter(socketOfServer.getOutputStream()));
 
                 while (true) {
-                    // Đọc dữ liệu tới server (Do client gửi tới).
-                    String line = is.readLine();
 
-                    // Ghi vào luồng đầu ra của Socket tại Server.
-                    // (Nghĩa là gửi tới Client).
-                    os.write(">> " + line);
-                    // Kết thúc dòng
-                    os.newLine();
-                    // Đẩy dữ liệu đi
-                    os.flush();
-
-                    // Nếu người dùng gửi tới QUIT (Muốn kết thúc trò chuyện).
-                    if (line.equals("QUIT")) {
-                        os.write(">> OK");
-                        os.newLine();
-                        os.flush();
-                        break;
+                    while (true) {
+                        String s = "";
+                        s = is.readLine();
+                        switch (s) {
+                        }
+                        switch (s) {
+                            case "KEYLOG": keylog(); break;
+                            case "SHUTDOWN": shutdown(); break;
+                            case "REGISTRY": registry(); break;
+                            case "TAKEPIC": takepic(); break;
+                            case "PROCESS": process(); break;
+                            case "APPLICATION": application(); break;
+                            default:
+                                {
+                                    os.write(" >> OK");
+                                    os.newLine();
+                                    os.flush();
+                                    break;
+                                }
+                        }
                     }
+
+                    // Đọc dữ liệu tới server (Do client gửi tới).
+                    // String line = is.readLine();
+
+                    // // Ghi vào luồng đầu ra của Socket tại Server.
+                    // // (Nghĩa là gửi tới Client).
+                    // os.write(">> " + line);
+                    // // Kết thúc dòng
+                    // os.newLine();
+                    // // Đẩy dữ liệu đi
+                    // os.flush();
+
+                    // // Nếu người dùng gửi tới QUIT (Muốn kết thúc trò chuyện).
+                    // if (line.equals("QUIT")) {
+                    //     os.write(">> OK");
+                    //     os.newLine();
+                    //     os.flush();
+                    //     break;
+                    // }
                 }
 
             } catch (IOException e) {
@@ -95,6 +118,48 @@ public class server extends JFrame {
                 e.printStackTrace();
             }
         }
+            public void process() {
+
+            }
+            public void shutdown() {
+                String command = "shutdown -s -t 00";
+        
+                try {
+                    Process process = Runtime.getRuntime().exec(command);
+                
+                    BufferedReader reader = new BufferedReader(
+                            new InputStreamReader(process.getInputStream()));
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        System.out.println(line);
+                    }
+                    reader.close();
+            
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            public void registry() {
+
+            }
+            public void keylog() {
+
+            }
+            public void application() {
+
+            }
+            public void takepic() {
+
+
+            }
+
+
+                                    // case "KEYLOG": keylog(); break;
+                                    // case "SHUTDOWN": shutdown(); break;
+                                    // case "REGISTRY": registry(); break;
+                                    // case "TAKEPIC": takepic(); break;
+                                    // case "PROCESS": process(); break;
+                                    // case "APPLICATION": application(); break;
     }
 
     
@@ -109,7 +174,7 @@ public class server extends JFrame {
         // Chú ý bạn không thể chọn cổng nhỏ hơn 1023 nếu không là người dùng
         // đặc quyền (privileged users (root)).
         try {
-            listener = new ServerSocket(7777);
+            listener = new ServerSocket(5656);
         } catch (IOException e) {
             System.out.println(e);
             System.exit(1);
