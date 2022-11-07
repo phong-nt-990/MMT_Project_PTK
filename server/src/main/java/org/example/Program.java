@@ -62,8 +62,6 @@ public class Program
     public static Socket socketOfClient;
     public static BufferedReader is;
     public static BufferedWriter os;
-    public static DataOutputStream dos;
-    public static DataInputStream dis;
 
 
     public static void main(String[] args) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
