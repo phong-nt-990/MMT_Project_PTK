@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7edcc7de-194d-44e8-aada-11a6f60825c5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/server.java" afterDir="false" />
+    <list default="true" id="318a0b54-3152-40fc-8791-814b0c0f3c9c" name="Changes" comment="hihihi">
+      <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/org/example/server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/org/example/server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +19,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2HFFxcMRwtBfcUxCnhjCSRBOkta" />
+  <component name="ProjectId" id="2HFFrGSLau2AmOvxCqZyPdi6cP9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,13 +35,21 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7edcc7de-194d-44e8-aada-11a6f60825c5" name="Changes" comment="" />
-      <created>1667873175541</created>
+      <changelist id="318a0b54-3152-40fc-8791-814b0c0f3c9c" name="Changes" comment="" />
+      <created>1667873121368</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1667873175541</updated>
-      <workItem from="1667873176806" duration="218000" />
+      <updated>1667873121368</updated>
+      <workItem from="1667873122634" duration="404000" />
     </task>
+    <task id="LOCAL-00001" summary="hihihi">
+      <created>1667873232222</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667873232222</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -57,5 +65,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="hihihi" />
+    <option name="LAST_COMMIT_MESSAGE" value="hihihi" />
   </component>
 </project>
