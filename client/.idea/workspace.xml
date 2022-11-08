@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="client:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dae64cb1-68d5-4ad7-8071-c3a52b23110f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/client_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Program.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pic.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/artifacts/server_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/client02.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/client.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/client02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/org/example/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/org/example/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/org/example/server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/org/example/server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/org/example/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/org/example/Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/org/example/server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/org/example/server$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/org/example/server.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/org/example/server.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2HCkWvNMVfiPbnGhg716AVQI1lU" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/maple/OneDrive/Documents/MMT_Project_PTK/client/src/main/java/org/example",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\maple\OneDrive\Documents\MMT_Project_PTK\client\src\main\java\org\example" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dae64cb1-68d5-4ad7-8071-c3a52b23110f" name="Changes" comment="" />
+      <created>1667796488475</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667796488475</updated>
+      <workItem from="1667796489792" duration="42000" />
+      <workItem from="1667803315558" duration="81000" />
+      <workItem from="1667813050173" duration="7760000" />
+      <workItem from="1667827049047" duration="14736000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
