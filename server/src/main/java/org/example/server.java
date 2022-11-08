@@ -48,19 +48,15 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
-import com.github.kwhat.jnativehook.GlobalScreen;
-import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
-import com.github.kwhat.jnativehook.NativeHookException;
-import com.github.kwhat.jnativehook.keyboard.NativeKeyListener;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class server extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
-    public String s;
-    public String ss;
-
+    public static String s;
+    public static String ss;
+    public Image newimg;
+    public static BufferedImage bimg;
+    byte[] bytes;
 
     public void shutdown() {
         try {
@@ -87,18 +83,23 @@ public class server extends JDialog {
         while (true)
         {
             receiveSignalTakePic();
+            System.out.println(ss);
             switch (ss)
             {
                 case "TAKE":
                 {
                     try {
-                        BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-                        ImageIO.write(image, "png", new File("/screenshot.png"));
+                        Robot bot = new Robot();
+                        bimg = bot.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+                        ImageIO.write(bimg, "PNG", Program.socketOfServer.getOutputStream());
+                        Program.socketOfServer.close();
 
-                    } catch (AWTException | IOException awte)
+                    } catch (AWTException awte)
                     {
                         System.out.println(awte);
                         break;
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
                     }
 
                 }
@@ -111,7 +112,6 @@ public class server extends JDialog {
     }
     public server() {
         // Init s
-        s = "";
 
         setContentPane(contentPane);
         setModal(true);
@@ -157,6 +157,7 @@ public class server extends JDialog {
             respondFromClient: {
                 while (true) {
                     receiveSignal();
+                    System.out.println(s);
                     switch (s) {
                         case "SHUTDOWN": {
                             shutdown();
@@ -169,6 +170,12 @@ public class server extends JDialog {
                         case "TAKEPIC": {
                             takepic();
                             break;
+                        }
+                        case "" : {
+
+                        }
+                        default: {
+                            System.out.println(s);
                         }
 
                     }

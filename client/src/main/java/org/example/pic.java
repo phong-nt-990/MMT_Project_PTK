@@ -16,7 +16,7 @@ public class pic extends JDialog {
     private JPanel contentPane;
     private JButton butTake;
     private JButton butQuitTake;
-    private JLabel imagePane;
+    public JLabel imagePane;
     public String s;
 
     private static Thread t;
@@ -56,8 +56,38 @@ public class pic extends JDialog {
     }
 
     public void lam() {
-        Thread t = new GreetingServer();
+//        Thread t = new GreetingServer();
+//        t.start();
+        Thread t = new getPic();
         t.start();
+
+    }
+
+    class getPic extends Thread {
+        public void run() {
+            while (true)
+                try {
+                    BufferedImage img = ImageIO.read(ImageIO.createImageInputStream(Program.socketOfClient.getInputStream()));
+                    JFrame frame = new JFrame();
+                    frame.getContentPane().add(new JLabel(new ImageIcon(img)));
+                    frame.pack();
+                    frame.setVisible(true);
+                }
+            catch(SocketTimeoutException st)
+                    {
+                        System.out.println("Socket timed out!");
+                        break;
+                    }
+             catch(IOException e)
+                    {
+                        e.printStackTrace();
+                        break;
+                    }
+             catch(Exception ex)
+                    {
+                        System.out.println(ex);
+                    }
+        }
     }
 
 //    public void picInitComponent() {
@@ -78,41 +108,5 @@ public class pic extends JDialog {
         dispose();
     }
 
-}
-class GreetingServer extends Thread
-{
-       public void run()
-       {
-           try {
-               Program.socketOfClient.setSoTimeout(180000);
-           } catch (SocketException e) {
-               throw new RuntimeException(e);
-           }
-           while(true)
-          {
-               try
-               {
-                  BufferedImage img=ImageIO.read(ImageIO.createImageInputStream(Program.socketOfClient.getInputStream()));
-                  JFrame frame = new JFrame();
-                  frame.getContentPane().add(new JLabel(new ImageIcon(img)));
-                  frame.pack();
-                  frame.setVisible(true);
-              }
-             catch(SocketTimeoutException st)
-             {
-                   System.out.println("Socket timed out!");
-                  break;
-             }
-             catch(IOException e)
-             {
-                  e.printStackTrace();
-                  break;
-             }
-             catch(Exception ex)
-            {
-                  System.out.println(ex);
-            }
-          }
-       }
 
 }

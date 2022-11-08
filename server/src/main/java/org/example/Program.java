@@ -63,15 +63,21 @@ public class Program
     public static BufferedWriter os;
     public static DataOutputStream dos;
     public static DataInputStream dis;
-
-
+    public static String s;
+    Program() {
+        s = "hello";
+    }
     public static void main(String[] args) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+        System.out.println(s);
+
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         server dialog = new server();
-        dialog.setTitle("Open Server Form");
+        dialog.setTitle("Open Server 1Form");
+
         dialog.setResizable(false);
         dialog.pack();
         dialog.setVisible(true);
+
         System.exit(0);
     }
 

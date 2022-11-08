@@ -55,22 +55,22 @@ public class client extends JDialog {
 
 
     public void butPic_Click() {
-//        if (Program.socketOfClient == null)
-//        {
-//            JOptionPane.showMessageDialog(null, "Chưa kết nối đến server");
-//            return;
-//        }
-//        String sCommand = "TAKEPIC";
-//        try {
-//            Program.nw.write(sCommand);
-//            Program.nw.flush();
-//        } catch (IOException e)
-//        {
-//            System.out.println(e);
-//        }
+        if (Program.socketOfClient == null)
+        {
+            JOptionPane.showMessageDialog(null, "Chưa kết nối đến server");
+            return;
+        }
+        String sCommand = "TAKEPIC";
+        try {
+            Program.nw.write(sCommand);
+            Program.nw.flush();
+        } catch (IOException e)
+        {
+            System.out.println(e);
+        }
 
         pic pic_dialog = new pic();
-
+        pic_dialog.lam();
 
 
 //        pic_dialog.lam();

@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19de4ec4-4274-4486-a813-52519930d154" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/client_jar.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/client_jar/client.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/GreetingServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/pic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/server_jar/server.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/production/server/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/org/example/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/org/example/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/org/example/server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/org/example/server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,13 +40,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/maple/OneDrive/Documents/MMT_Project_PTK/client&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -52,6 +57,10 @@
       <option name="presentableId" value="Default" />
       <updated>1667872543307</updated>
       <workItem from="1667872544623" duration="180000" />
+      <workItem from="1667876440329" duration="2921000" />
+      <workItem from="1667888127618" duration="2227000" />
+      <workItem from="1667892329339" duration="512000" />
+      <workItem from="1667898746491" duration="242000" />
     </task>
     <servers />
   </component>
