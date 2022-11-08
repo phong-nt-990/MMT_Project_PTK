@@ -171,8 +171,9 @@ public class server extends JDialog {
                             takepic();
                             break;
                         }
-                        case "" : {
-
+                        case "APPLICATION" : {
+                            application();
+                            break;
                         }
                         default: {
                             System.out.println(s);
@@ -196,6 +197,9 @@ public class server extends JDialog {
         }
     }
 
+    public void application() {
+
+    }
     public void finish() throws IOException {
         Program.serversocket.close();
         Program.socketOfServer.close();

@@ -72,7 +72,7 @@ public class Program
 
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         server dialog = new server();
-        dialog.setTitle("Open Server 1Form");
+        dialog.setTitle("Open Server Form");
 
         dialog.setResizable(false);
         dialog.pack();

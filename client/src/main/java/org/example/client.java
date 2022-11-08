@@ -51,8 +51,17 @@ public class client extends JDialog {
                 butPic_Click();
             }
         });
+        appRunningButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                appRuningButton_Clicked();
+            }
+        });
     }
 
+    public void appRuningButton_Clicked() {
+
+    }
 
     public void butPic_Click() {
         if (Program.socketOfClient == null)
@@ -79,6 +88,9 @@ public class client extends JDialog {
         pic_dialog.setTitle("Take Screenshot Form");
         pic_dialog.pack();
         pic_dialog.setVisible(true);
+    }
+    public void setAppRunningButton() {
+
     }
     public void butExit_Click() {
         String sCommand = "QUIT";
