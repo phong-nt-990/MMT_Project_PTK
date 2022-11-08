@@ -30,7 +30,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.nio.ByteBuffer;
 import java.nio.channels.ScatteringByteChannel;
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -49,14 +48,18 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
-
+import com.github.kwhat.jnativehook.GlobalScreen;
+import com.github.kwhat.jnativehook.keyboard.NativeKeyEvent;
+import com.github.kwhat.jnativehook.NativeHookException;
+import com.github.kwhat.jnativehook.keyboard.NativeKeyListener;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class server extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     public String s;
     public String ss;
-    public static BufferedImage bimg;
 
 
     public void shutdown() {
@@ -72,7 +75,7 @@ public class server extends JDialog {
     public void receiveSignalTakePic() {
         try
         {
-            ss = Program.nr.readLine();
+            ss = Program.is.readLine();
         }
         catch (IOException e)
         {
@@ -88,49 +91,15 @@ public class server extends JDialog {
             {
                 case "TAKE":
                 {
-                    Image newing;
-                    byte[] bytes;
                     try {
-                        Robot bot = new Robot();
-                        bimg = bot.createScreenCapture(new Rectangle(0,0,200,100));
-                        ImageIO.write(bimg, "PNG", Program.socketOfServer.getOutputStream());
-                        Program.socketOfServer.close();
-                        Program.listener.close();
-                    } catch (AWTException awte) {
+                        BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+                        ImageIO.write(image, "png", new File("/screenshot.png"));
+
+                    } catch (AWTException | IOException awte)
+                    {
                         System.out.println(awte);
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
+                        break;
                     }
-//                    try {
-////                        DataInputStream in = new DataInputStream(Program.socketOfServer.getInputStream());
-////                        DataOutputStream out = new DataOutputStream(Program.socketOfServer.getOutputStream());
-////                        BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-//////                        ImageIO.write(image, "png", new File("screenshot.png"));
-//////                        byte[] sizeAr = new byte[4];
-//////                        in.read(sizeAr);
-//////                        int size = ByteBuffer.wrap(sizeAr).asIntBuffer().get();
-//////
-//////                        byte[] imageAr = new byte[size];
-//////                        in.read(imageAr);
-////                          OutputStream sOutToClient = Program.socketOfServer.getOutputStream();
-////                          DataOutputStream out = new DataOutputStream(sOutToClient);
-////                          InputStream sInFromServer = Program.socketOfServer.getInputStream();
-////                          DataInputStream in = new DataInputStream(sInFromServer);
-////
-////                          ByteArrayOutputStream baos = new ByteArrayOutputStream();
-////                          ImageIO.write(image, "png", baos);
-////
-////                          byte[] size = ByteBuffer.allocate(4).putInt(baos.size()).array();
-////                          out.write(size);
-////                          out.write(baos.toByteArray());
-////                          out.flush();
-////
-////
-//                    } catch (AWTException | IOException awte)
-//                    {
-//                        System.out.println(awte);
-//                        break;
-//                    }
 
                 }
                 case "QUIT":
@@ -160,7 +129,7 @@ public class server extends JDialog {
     public void receiveSignal() {
         try
         {
-            s = Program.nr.readLine();
+            s = Program.is.readLine();
         }
         catch (IOException e)
         {
@@ -170,7 +139,7 @@ public class server extends JDialog {
     }
     public void button1_Click() {
         try {
-            Program.listener = new ServerSocket(5656);
+            Program.serversocket = new ServerSocket(5656);
         }
         catch (IOException e0) {
             System.out.println(e0);
@@ -181,14 +150,13 @@ public class server extends JDialog {
             System.out.println(Inet4Address.getLocalHost().getHostAddress());
 //            outputToPane("Server is waiting to accept user...");
             System.out.println("Server is waiting to accept user...");
-            Program.socketOfServer = Program.listener.accept();
+            Program.socketOfClient = Program.serversocket.accept();
             System.out.println("Accept a client");
-            Program.nr = new BufferedReader(new InputStreamReader(Program.socketOfServer.getInputStream()));
-            Program.nw = new BufferedWriter(new OutputStreamWriter(Program.socketOfServer.getOutputStream()));
+            Program.is = new BufferedReader(new InputStreamReader(Program.socketOfClient.getInputStream()));
+            Program.os = new BufferedWriter(new OutputStreamWriter(Program.socketOfClient.getOutputStream()));
             respondFromClient: {
                 while (true) {
                     receiveSignal();
-                    System.out.println(s);
                     switch (s) {
                         case "SHUTDOWN": {
                             shutdown();
@@ -222,7 +190,7 @@ public class server extends JDialog {
     }
 
     public void finish() throws IOException {
-        Program.listener.close();
+        Program.serversocket.close();
         Program.socketOfServer.close();
 
 //        System.out.println("Connection closed");

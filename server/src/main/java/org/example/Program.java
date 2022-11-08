@@ -42,7 +42,6 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.time.chrono.IsoChronology;
 import java.util.logging.Level;
-
 import javax.imageio.ImageIO;
 import javax.imageio.stream.MemoryCacheImageInputStream;
 import javax.xml.stream.util.StreamReaderDelegate;
@@ -57,11 +56,14 @@ import java.util.Calendar;
 
 public class Program
 {
-    public static ServerSocket listener;
+    public static ServerSocket serversocket;
     public static Socket socketOfServer;
-//    public static Socket socketOfClient;
-    public static BufferedReader nr;
-    public static BufferedWriter nw;
+    public static Socket socketOfClient;
+    public static BufferedReader is;
+    public static BufferedWriter os;
+    public static DataOutputStream dos;
+    public static DataInputStream dis;
+
 
     public static void main(String[] args) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
