@@ -64,21 +64,27 @@ public class Program
     public static DataOutputStream dos;
     public static DataInputStream dis;
     public static String s;
-    Program() {
-        s = "hello";
-    }
-    public static void main(String[] args) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        System.out.println(s);
+    public static void main(String[] args) {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (InstantiationException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        } catch (UnsupportedLookAndFeelException e) {
+            throw new RuntimeException(e);
+        }
 
-        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        server dialog = new server();
-        dialog.setTitle("Open Server Form");
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                server dialog = new server();
+                dialog.setVisible(true);
+            }
+        });
 
-        dialog.setResizable(false);
-        dialog.pack();
-        dialog.setVisible(true);
-
-        System.exit(0);
     }
 
 }

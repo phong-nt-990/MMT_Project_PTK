@@ -1,5 +1,6 @@
 package org.example;
 
+import javax.naming.SizeLimitExceededException;
 import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.JFrame;
@@ -8,6 +9,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.DefaultBoundedRangeModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.image.RenderedImage;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -30,6 +32,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.net.UnknownHostException;
 import java.nio.channels.ScatteringByteChannel;
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -49,15 +52,35 @@ import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
 
-public class server extends JDialog {
+public class server extends JFrame {
     private JPanel contentPane;
     private JButton buttonOK;
+    public JLabel ipFieldShow;
     public static String s;
     public static String ss;
-    public Image newimg;
     public static BufferedImage bimg;
     byte[] bytes;
 
+    public void InitializeComponent() {
+        setContentPane(contentPane);
+        getRootPane().setDefaultButton(buttonOK);
+        this.setResizable(false);
+        this.pack();
+        this.setTitle("Server Form");
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        buttonOK.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                button1_Click();
+            }
+        });
+    }
+
+    public server() {
+        InitializeComponent();
+        // Init s
+//        outputToPane("Local IP: " + Inet4Address.getLocalHost().getHostAddress());
+//        outputToPane("hi");
+    }
     public void shutdown() {
         try {
             Runtime.getRuntime().exec("shutdown -s -t 00");
@@ -91,9 +114,14 @@ public class server extends JDialog {
                     try {
                         Robot bot = new Robot();
                         bimg = bot.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-                        ImageIO.write(bimg, "PNG", Program.socketOfServer.getOutputStream());
-                        Program.socketOfServer.close();
-
+//                        ImageIO.write((RenderedImage) bimg, "PNG", Program.socketOfClient.getOutputStream());
+                        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                        ImageIO.write(bimg, "PNG", baos);
+                        baos.close();
+                        ObjectOutputStream oos = new ObjectOutputStream(Program.socketOfClient.getOutputStream());
+                        oos.writeObject(baos.size() + "");
+                        Program.socketOfClient.getOutputStream().write(baos.toByteArray());
+                        System.out.println("Screenshot sent");
                     } catch (AWTException awte)
                     {
                         System.out.println(awte);
@@ -101,6 +129,7 @@ public class server extends JDialog {
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
+                    break;
 
                 }
                 case "QUIT":
@@ -109,21 +138,6 @@ public class server extends JDialog {
                 }
             }
         }
-    }
-    public server() {
-        // Init s
-
-        setContentPane(contentPane);
-        setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
-
-//        outputToPane("Local IP: " + Inet4Address.getLocalHost().getHostAddress());
-//        outputToPane("hi");
-        buttonOK.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                button1_Click();
-            }
-        });
     }
 
     public void receiveSignal() {
@@ -137,6 +151,7 @@ public class server extends JDialog {
             System.out.println(e);
         }
     }
+
     public void button1_Click() {
         try {
             Program.serversocket = new ServerSocket(5656);
@@ -146,9 +161,11 @@ public class server extends JDialog {
             System.exit(1);
         }
         try {
-//            outputToPane("Local IP: " + Inet4Address.getLocalHost().getHostAddress());
+//            outputToPane();
             System.out.println(Inet4Address.getLocalHost().getHostAddress());
+
 //            outputToPane("Server is waiting to accept user...");
+
             System.out.println("Server is waiting to accept user...");
             Program.socketOfClient = Program.serversocket.accept();
             System.out.println("Accept a client");
@@ -156,16 +173,14 @@ public class server extends JDialog {
             Program.os = new BufferedWriter(new OutputStreamWriter(Program.socketOfClient.getOutputStream()));
             respondFromClient: {
                 while (true) {
+
                     receiveSignal();
+
                     System.out.println(s);
                     switch (s) {
                         case "SHUTDOWN": {
                             shutdown();
                             break;
-                        }
-                        case "QUIT": {
-                            finish();
-                            break respondFromClient;
                         }
                         case "TAKEPIC": {
                             takepic();
@@ -175,14 +190,13 @@ public class server extends JDialog {
                             application();
                             break;
                         }
-                        default: {
-                            System.out.println(s);
+                        case "QUIT": {
+                            finish();
+                            break respondFromClient;
                         }
-
                     }
                 }
             }
-
         }
         catch (IOException e)
         {
@@ -198,11 +212,11 @@ public class server extends JDialog {
     }
 
     public void application() {
-
+//        System.out.println(Program.s);
     }
     public void finish() throws IOException {
         Program.serversocket.close();
-        Program.socketOfServer.close();
+        Program.socketOfServer = null;
 
 //        System.out.println("Connection closed");
     }

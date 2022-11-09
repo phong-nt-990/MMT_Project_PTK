@@ -1,30 +1,32 @@
 package org.example;
 
 import javax.swing.*;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Program {
     public static Socket socketOfClient;
-    public static ServerSocket listener;
     public static BufferedReader nr;
     public static BufferedWriter nw;
 
-    public static void main(String[] args) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+    public static void main(String[] args) {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (InstantiationException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        } catch (UnsupportedLookAndFeelException e) {
+            throw new RuntimeException(e);
+        }
+
         client dialog = new client();
-        JFormattedTextField ipTextField1 = dialog.ipTextField;
-
-        dialog.setTitle("Client Form");
-        dialog.setResizable(false);
-        dialog.pack();
-        dialog.setResizable(false);
         dialog.setVisible(true);
-
-        System.exit(0);
     }
+
 
 
 }

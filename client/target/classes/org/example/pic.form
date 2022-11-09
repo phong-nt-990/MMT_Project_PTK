@@ -27,7 +27,7 @@
               <text value="Chụp"/>
             </properties>
           </component>
-          <component id="801b9" class="javax.swing.JButton" binding="butSaveScr">
+          <component id="801b9" class="javax.swing.JButton" binding="butQuitTake">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
                 <minimum-size width="75" height="100"/>
@@ -58,7 +58,7 @@
           <component id="71e82" class="javax.swing.JLabel" binding="imagePane">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
-                <minimum-size width="800" height="450"/>
+                <minimum-size width="500" height="-1"/>
               </grid>
             </constraints>
             <properties>
