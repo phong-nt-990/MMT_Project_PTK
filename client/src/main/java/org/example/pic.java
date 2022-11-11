@@ -168,7 +168,7 @@ public class pic extends JDialog {
         }
 
         dispose();
-        // DO NOTHING
+        // DISPOSE
     }
 
 }

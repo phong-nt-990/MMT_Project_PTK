@@ -91,7 +91,7 @@ public class server extends JFrame {
         }
     }
 
-    public void receiveSignalTakePic() {
+    public void receiveSignalFun() {
         try
         {
             ss = Program.is.readLine();
@@ -105,7 +105,7 @@ public class server extends JFrame {
     public void takepic() {
         while (true)
         {
-            receiveSignalTakePic();
+            receiveSignalFun();
             System.out.println(ss);
             switch (ss)
             {
@@ -139,7 +139,45 @@ public class server extends JFrame {
             }
         }
     }
+    public void application() {
+        String ss_a = "";
 
+    }
+    public void process() {
+        while (true) {
+            receiveSignalFun();
+            System.out.println(ss);
+            switch (ss) {
+                case "XEM":
+                {
+                    // "BEGIN_OF_SERVER_LIST
+                    try { String line;
+                        Process p = Runtime.getRuntime().exec (System.getenv("windir") +"\\system32\\"+"tasklist.exe" + " /FO CSV");
+                        BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
+                    while ((line = input.readLine()) != null) {
+                        Program.os.write(line);
+                        Program.os.newLine();
+                        Program.os.flush();
+                    }
+                    Program.os.write("END_OF_SERVER_LIST");
+                    Program.os.newLine();
+                    Program.os.flush();
+//                        System.out.println("END_OF_SERVER_LIST");
+//                        ObjectOutputStream oos = new ObjectOutputStream(Program.socketOfClient.getOutputStream());
+//                        oos.writeObject(input);
+
+                    } catch (Exception err) {
+                        err.printStackTrace();
+                    }
+                    break;
+                }
+                case "QUIT":
+                {
+                    return;
+                }
+            }
+        }
+    }
     public void receiveSignal() {
         try
         {
@@ -177,21 +215,31 @@ public class server extends JFrame {
                     receiveSignal();
 
                     System.out.println(s);
+                    ss = "";
                     switch (s) {
                         case "SHUTDOWN": {
                             shutdown();
+                            s = "";
                             break;
                         }
                         case "TAKEPIC": {
                             takepic();
+                            s = "";
                             break;
                         }
                         case "APPLICATION" : {
                             application();
+                            s = "";
+                            break;
+                        }
+                        case "PROCESS": {
+                            process();
+                            s = "";
                             break;
                         }
                         case "QUIT": {
                             finish();
+                            s = "";
                             break respondFromClient;
                         }
                     }
@@ -211,10 +259,6 @@ public class server extends JFrame {
         }
     }
 
-    public void application() {
-        String ss_a = "";
-
-    }
     public void finish() throws IOException {
         Program.serversocket.close();
         Program.socketOfServer = null;
