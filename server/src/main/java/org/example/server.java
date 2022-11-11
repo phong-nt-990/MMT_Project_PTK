@@ -79,7 +79,6 @@ public class server extends JFrame {
         InitializeComponent();
         // Init s
 //        outputToPane("Local IP: " + Inet4Address.getLocalHost().getHostAddress());
-//        outputToPane("hi");
     }
     public void shutdown() {
         try {
