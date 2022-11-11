@@ -158,6 +158,15 @@ public class pic extends JDialog {
     }
 
     public void onCancel() {
+        String s = "QUIT";
+        try {
+            Program.nw.write(s);
+            Program.nw.newLine();
+            Program.nw.flush();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         dispose();
         // DO NOTHING
     }

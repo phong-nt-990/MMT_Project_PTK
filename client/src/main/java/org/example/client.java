@@ -36,51 +36,58 @@ public class client extends JFrame {
                 butConnect_Click();
             }
         });
+        shutdownButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                butShutdown_Click();
+            }
+        });
+        processRunningButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                processRunningButton_Click();
+            }
+        });
+        exitButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                butExit_Click();
+            }
+        });
     }
     public client() {
         InitializeComponent();
-//        setContentPane(contentPane);
-//        setModal(true);
-//        getRootPane().setDefaultButton(connectButton);
-//        connectButton.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//                butConnect_Click();
-//            }
-//        });
-//        shutdownButton.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//                butShutdown_Click();
-//            }
-//        });
-//        exitButton.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//                butExit_Click();
-//            }
-//        });
-//        takeScreenshotButton.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//                butPic_Click();
-//            }
-//        });
-//        appRunningButton.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//                appRuningButton_Clicked();
-//            }
-//        });
     }
 
-    public void appRuningButton_Clicked() {
-        if (Program.socketOfClient == null) {
+
+//    public void appRuningButton_Clicked() {
+//        if (Program.socketOfClient == null) {
+//            JOptionPane.showMessageDialog(null, "Chưa kết nối đến server");
+//            return;
+//        }
+//        String sCommand = "APPLICATION";
+//        try {
+//            Program.nw.write(sCommand);
+//            Program.nw.flush();
+//        } catch (IOException e) {
+//            System.out.println(e);
+//        }
+//    }
+
+    public void processRunningButton_Click() {
+        if (Program.socketOfClient == null)
+        {
             JOptionPane.showMessageDialog(null, "Chưa kết nối đến server");
             return;
         }
-        String sCommand = "APPLICATION";
+        String sCommand = "PROCESS";
         try {
             Program.nw.write(sCommand);
+            Program.nw.newLine();
             Program.nw.flush();
-        } catch (IOException e) {
+        } catch (IOException e)
+        {
             System.out.println(e);
         }
+        process viewapp = new process();
+        viewapp.setVisible(true);
     }
 
     public void butPic_Click() {
@@ -123,7 +130,6 @@ public class client extends JFrame {
         System.exit(1);
     }
 
-
     public void butShutdown_Click() {
         if (Program.socketOfClient == null)
         {
@@ -133,6 +139,7 @@ public class client extends JFrame {
         String sCommand = "SHUTDOWN";
             try {
                 Program.nw.write(sCommand);
+                Program.nw.newLine();
                 Program.nw.flush();
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -145,7 +152,6 @@ public class client extends JFrame {
             System.out.println(e);
         }
         Program.socketOfClient = null;
-
     }
 
     public void butConnect_Click() {

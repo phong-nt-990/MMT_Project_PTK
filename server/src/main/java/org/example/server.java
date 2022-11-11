@@ -212,7 +212,8 @@ public class server extends JFrame {
     }
 
     public void application() {
-//        System.out.println(Program.s);
+        String ss_a = "";
+
     }
     public void finish() throws IOException {
         Program.serversocket.close();
