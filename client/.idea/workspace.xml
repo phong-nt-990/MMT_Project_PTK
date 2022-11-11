@@ -9,25 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="19de4ec4-4274-4486-a813-52519930d154" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/process.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/process.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/process.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Kill$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Kill$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Kill$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Kill$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Kill$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Kill$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Kill.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Kill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/main/java/org/example/server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/org/example/server.java" afterDir="false" />
-    </list>
+    <list default="true" id="19de4ec4-4274-4486-a813-52519930d154" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -97,7 +79,7 @@
       <workItem from="1668020181269" duration="26000" />
       <workItem from="1668020251953" duration="739000" />
       <workItem from="1668048602960" duration="10856000" />
-      <workItem from="1668145976066" duration="15040000" />
+      <workItem from="1668145976066" duration="15117000" />
     </task>
     <servers />
   </component>
