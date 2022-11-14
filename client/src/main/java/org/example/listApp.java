@@ -2,29 +2,20 @@ package org.example;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
-import java.awt.*;
 import java.awt.event.*;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.Arrays;
-import java.util.*;
-import java.util.List;
 import java.util.Objects;
 
-public class process extends JDialog {
+public class listApp extends JDialog {
     private JPanel contentPane;
     private JButton killButton;
     private JButton startButton;
     private JButton watchButton;
     private JButton clearViewButton;
     private JTable table1;
-//    private Object[][] task_data_obj = {};
-//    private ArrayList<ArrayList<String>> task_data = new ArrayList<>(5);
 
-    public process() {
+
+    public listApp() {
         InitializeProcessComponent();
     }
 
@@ -40,7 +31,7 @@ public class process extends JDialog {
         getRootPane().setDefaultButton(watchButton);
         setResizable(false);
         // Init table1
-        DefaultTableModel model = new DefaultTableModel(null ,new String[] {"Image Name", "PID", "Session Name", "Session#", "Mem Usage"});
+        DefaultTableModel model = new DefaultTableModel(null, new String[]{"Application Name", "ID", "Handle Count"});
         table1.setModel(model);
 
         this.pack();
@@ -83,7 +74,7 @@ public class process extends JDialog {
     // -------------------------- FUNCTION ------------------------------
 
     private void clearViewButtonClick() {
-        DefaultTableModel anothermodel = new DefaultTableModel(null ,new String[] {"Image Name", "PID", "Session Name", "Session#", "Mem Usage"}){
+        DefaultTableModel anothermodel = new DefaultTableModel(null, new String[]{"Application Name", "ID", "Handle Count"}) {
             @Override
             public boolean isCellEditable(int row, int column) {
                 //Only the third column
@@ -92,12 +83,14 @@ public class process extends JDialog {
         };
         table1.setModel(anothermodel);
     }
-    private void watchButtonClick_addtoRowFunc(String[] input){
+
+    private void watchButtonClick_addtoRowFunc(String[] input) {
         DefaultTableModel yourModel = (DefaultTableModel) table1.getModel();
         yourModel.addRow(input);
     }
-    private String[] csv_stringToArr(String input){
-        String tmp = input.substring(1, input.length()-1);
+
+    private String[] csv_stringToArr(String input) {
+        String tmp = input.substring(1, input.length() - 1);
         String[] output = tmp.split("\",\"");
 //        String[] tmp2 = null;
 //        tmp2 = tmp.split("\",\"");
@@ -108,8 +101,9 @@ public class process extends JDialog {
 
         return output;
     }
+
     private void watchButtonClick() {
-        DefaultTableModel anothermodel = new DefaultTableModel(null ,new String[] {"Image Name", "PID", "Session Name", "Session#", "Mem Usage"}){
+        DefaultTableModel anothermodel = new DefaultTableModel(null, new String[]{"Application Name", "ID", "Handle Count"}) {
             @Override
             public boolean isCellEditable(int row, int column) {
                 //Only the third column
@@ -128,8 +122,7 @@ public class process extends JDialog {
 //            String s3 = "count";
             String line = "";
             try {
-                while (!Objects.equals(line, "END_OF_SERVER_LIST"))
-                {
+                while (!Objects.equals(line, "END_OF_SERVER_LIST")) {
                     line = Program.nr.readLine();
                     if (!line.equals("END_OF_SERVER_LIST")) {
                         watchButtonClick_addtoRowFunc(csv_stringToArr(line));
@@ -140,8 +133,7 @@ public class process extends JDialog {
 //                Message m2 = (Message) ois.readObject();
                 }
                 line = "";
-            } catch (IOException e)
-            {
+            } catch (IOException e) {
                 System.out.println(e);
             }
 //            temp = Program.nr.readLine();
@@ -158,8 +150,7 @@ public class process extends JDialog {
             Program.nw.write(temp);
             Program.nw.newLine();
             Program.nw.flush();
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             System.out.println(e);
         }
 
@@ -175,8 +166,7 @@ public class process extends JDialog {
             Program.nw.write(temp);
             Program.nw.newLine();
             Program.nw.flush();
-        } catch (IOException e)
-        {
+        } catch (IOException e) {
             System.out.println(e);
         }
         Start start_dialog = new Start();
@@ -199,4 +189,5 @@ public class process extends JDialog {
         dispose();
         // DISPOSE
     }
+
 }

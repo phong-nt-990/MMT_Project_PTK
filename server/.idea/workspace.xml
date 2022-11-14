@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="be738a8d-7ed3-4d11-b585-7d5c238aa5d9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/Start.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/Start.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/listApp.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/listApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/Kill.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/Kill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/pic.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/pic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/process.form" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/process.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/process.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/process.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/Kill$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/Kill$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/Kill$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/Kill$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/Kill.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/Kill.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/client$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/client$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/client$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/client$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/client$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/client$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/client$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/client$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/pic$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/pic$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/pic$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/pic$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/pic$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/pic$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/pic$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/pic$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/pic.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/pic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/process$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/process$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/process$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/process$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/process$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/process$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/process$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/process$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/process$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/process$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/process$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/process$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/process.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/process.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/server_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/server.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2HQt9111OxrMVJIBfEBuJwhQOzB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/maple/OneDrive/Documents/MMT_Project_PTK/client&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="serverCPL" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.example.Program" />
+      <module name="server" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="be738a8d-7ed3-4d11-b585-7d5c238aa5d9" name="Changes" comment="" />
+      <created>1668228980489</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1668228980489</updated>
+      <workItem from="1668228981926" duration="783000" />
+      <workItem from="1668232298516" duration="112000" />
+      <workItem from="1668237993419" duration="2002000" />
+      <workItem from="1668304174025" duration="21246000" />
+      <workItem from="1668388121004" duration="2018000" />
+      <workItem from="1668401828757" duration="1639000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

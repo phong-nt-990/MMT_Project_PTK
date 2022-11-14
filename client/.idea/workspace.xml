@@ -10,9 +10,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19de4ec4-4274-4486-a813-52519930d154" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Start.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Start.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/listApp.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/listApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Kill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Kill.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/process.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/process.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/process.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Kill$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Kill$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Kill$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Kill$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Kill.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Kill.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/client$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/client$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/client$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/client$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/client$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/pic$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/pic$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/pic$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/pic$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/pic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/process.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.idea/artifacts/server_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/org/example/server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/org/example/server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/org/example/server.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/org/example/server.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +63,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/example/process.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -46,6 +84,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;258&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/maple/OneDrive/Documents/MMT_Project_PTK/client&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
@@ -85,6 +124,15 @@
       <workItem from="1668048602960" duration="10856000" />
       <workItem from="1668145976066" duration="15117000" />
       <workItem from="1668186936693" duration="580000" />
+      <workItem from="1668228245777" duration="646000" />
+      <workItem from="1668228908500" duration="46000" />
+      <workItem from="1668228968978" duration="639000" />
+      <workItem from="1668232242181" duration="164000" />
+      <workItem from="1668238014047" duration="2969000" />
+      <workItem from="1668299352907" duration="398000" />
+      <workItem from="1668301760414" duration="23865000" />
+      <workItem from="1668388122838" duration="2176000" />
+      <workItem from="1668394273883" duration="1975000" />
     </task>
     <servers />
   </component>

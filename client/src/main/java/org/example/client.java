@@ -23,6 +23,7 @@ public class client extends JFrame {
     public void InitializeComponent() {
         setContentPane(contentPane);
         getRootPane().setDefaultButton(connectButton);
+        this.setResizable(false);
         this.pack();
         this.setTitle("Client Form");
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -51,6 +52,11 @@ public class client extends JFrame {
                 butExit_Click();
             }
         });
+        appRunningButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                butApplicationList_Click();
+            }
+        });
     }
     public client() {
         InitializeComponent();
@@ -74,7 +80,7 @@ public class client extends JFrame {
     public void processRunningButton_Click() {
         if (Program.socketOfClient == null)
         {
-            JOptionPane.showMessageDialog(null, "Chưa kết nối đến server");
+            JOptionPane.showMessageDialog(contentPane, "Chưa kết nối đến server");
             return;
         }
         String sCommand = "PROCESS";
@@ -93,7 +99,7 @@ public class client extends JFrame {
     public void butPic_Click() {
         if (Program.socketOfClient == null)
         {
-            JOptionPane.showMessageDialog(null, "Chưa kết nối đến server");
+            JOptionPane.showMessageDialog(contentPane, "Chưa kết nối đến server");
             return;
         }
         String sCommand = "TAKEPIC";
@@ -113,8 +119,23 @@ public class client extends JFrame {
 //        pic_dialog.pack();
         pic_dialog.setVisible(true);
     }
-    public void setAppRunningButton() {
-
+    public void butApplicationList_Click() {
+        if (Program.socketOfClient == null)
+        {
+            JOptionPane.showMessageDialog(contentPane, "Chưa kết nối đến server");
+            return;
+        }
+        String sCommand = "APPLICATION";
+        try {
+            Program.nw.write(sCommand);
+            Program.nw.newLine();
+            Program.nw.flush();
+        } catch (IOException e)
+        {
+            System.out.println(e);
+        }
+        listApp listappDialog = new listApp();
+        listappDialog.setVisible(true);
     }
     public void butExit_Click() {
         String sCommand = "QUIT";
@@ -133,7 +154,7 @@ public class client extends JFrame {
     public void butShutdown_Click() {
         if (Program.socketOfClient == null)
         {
-            JOptionPane.showMessageDialog(null, "Chưa kết nối đến server");
+            JOptionPane.showMessageDialog(contentPane, "Chưa kết nối đến server");
             return;
         }
         String sCommand = "SHUTDOWN";
@@ -161,14 +182,14 @@ public class client extends JFrame {
             Program.socketOfClient = new Socket();
             Program.socketOfClient.connect(ipServer);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Lỗi kết nối đến server");
+            JOptionPane.showMessageDialog(contentPane, "Lỗi kết nối đến server");
             Program.socketOfClient = null;
             test = false;
             return;
         }
         if (test)
         {
-            JOptionPane.showMessageDialog(null, "Kết nối đến server thành công");
+            JOptionPane.showMessageDialog(contentPane, "Kết nối đến server thành công");
             try {
                 Program.nr = new BufferedReader(new InputStreamReader(Program.socketOfClient.getInputStream()));
                 Program.nw = new BufferedWriter(new OutputStreamWriter(Program.socketOfClient.getOutputStream()));

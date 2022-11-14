@@ -18,6 +18,17 @@ public class pic extends JDialog {
     private JLabel scrshot;
 
     private void InitializePicComponent() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (InstantiationException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        } catch (UnsupportedLookAndFeelException e) {
+            throw new RuntimeException(e);
+        }
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(butTake);
@@ -137,7 +148,6 @@ public class pic extends JDialog {
 
     private void butSaveScrClick () {
         JFrame parentFrame = new JFrame();
-
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Specify a file to save");
 
@@ -148,11 +158,11 @@ public class pic extends JDialog {
             System.out.println("Save as file: " + fileToSave.getAbsolutePath());
             try {
                 ImageIO.write(scrBuffer,"png",fileToSave);
-                JOptionPane.showMessageDialog(null, "Lưu thành công.");
+                JOptionPane.showMessageDialog(contentPane, "Lưu thành công.");
             } catch (IOException e)
             {
                 System.out.println("Cannot save to file.");
-                JOptionPane.showMessageDialog(null, "Cannot save to file. Error: " + e);
+                JOptionPane.showMessageDialog(contentPane, "Cannot save to file. Error: " + e);
             }
         }
     }

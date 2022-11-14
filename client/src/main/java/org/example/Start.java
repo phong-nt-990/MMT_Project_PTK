@@ -4,29 +4,30 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.io.IOException;
 
-public class Kill extends JDialog {
+public class Start extends JDialog {
     private JPanel contentPane;
-    private JFormattedTextField formattedTextField1;
-    private JButton killButton;
+    private JButton startButton;
+    private JFormattedTextField processNameTextField;
+    private JLabel processNameLabel;
 
-    public Kill() {
-        InitializeKillComponent();
+    public Start() {
+        InitializeStartComponent();
     }
 
-    private void InitializeKillComponent() {
+    private void InitializeStartComponent() {
         setContentPane(contentPane);
         setModal(true);
-        getRootPane().setDefaultButton(killButton);
+        getRootPane().setDefaultButton(startButton);
         this.setResizable(false);
         this.pack();
-        this.setTitle("Kill Form");
+        this.setTitle("Start Form");
 
-        killButton.addActionListener(new ActionListener() {
+        startButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                killButtonClick();
+                startButtonClick();
             }
         });
-
+        // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
@@ -42,13 +43,12 @@ public class Kill extends JDialog {
         }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
-
-    public void killButtonClick() {
+    private void startButtonClick() {
         try {
-            Program.nw.write("KILLID");
+            Program.nw.write("STARTID");
             Program.nw.newLine();
             Program.nw.flush();
-            Program.nw.write(formattedTextField1.getText());
+            Program.nw.write(processNameTextField.getText());
             Program.nw.newLine();
             Program.nw.flush();
             String s = Program.nr.readLine();
@@ -58,7 +58,6 @@ public class Kill extends JDialog {
             System.out.println(e);
         }
     }
-
 
     private void onCancel() {
         String s = "QUIT";
@@ -71,4 +70,6 @@ public class Kill extends JDialog {
         }
         dispose();
     }
+
+
 }
