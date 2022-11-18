@@ -21,20 +21,24 @@ public class process extends JDialog {
     private JButton watchButton;
     private JButton clearViewButton;
     private JTable table1;
-    private JButton buttonOK;
-    private JButton buttonCancel;
-    private Object[][] task_data_obj = {};
-    private ArrayList<ArrayList<String>> task_data = new ArrayList<>(5);
+//    private Object[][] task_data_obj = {};
+//    private ArrayList<ArrayList<String>> task_data = new ArrayList<>(5);
 
     public process() {
         InitializeProcessComponent();
     }
 
     private void InitializeProcessComponent() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+                 UnsupportedLookAndFeelException e) {
+            throw new RuntimeException(e);
+        }
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(watchButton);
-
+        setResizable(false);
         // Init table1
         DefaultTableModel model = new DefaultTableModel(null ,new String[] {"Image Name", "PID", "Session Name", "Session#", "Mem Usage"});
         table1.setModel(model);
@@ -77,11 +81,22 @@ public class process extends JDialog {
     }
 
     // -------------------------- FUNCTION ------------------------------
-    public void watchButtonClick_addtoRowFunc(String[] input){
+
+    private void clearViewButtonClick() {
+        DefaultTableModel anothermodel = new DefaultTableModel(null ,new String[] {"Image Name", "PID", "Session Name", "Session#", "Mem Usage"}){
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                //Only the third column
+                return false;
+            }
+        };
+        table1.setModel(anothermodel);
+    }
+    private void watchButtonClick_addtoRowFunc(String[] input){
         DefaultTableModel yourModel = (DefaultTableModel) table1.getModel();
         yourModel.addRow(input);
     }
-    public String[] csv_stringToArr(String input){
+    private String[] csv_stringToArr(String input){
         String tmp = input.substring(1, input.length()-1);
         String[] output = tmp.split("\",\"");
 //        String[] tmp2 = null;
@@ -93,9 +108,16 @@ public class process extends JDialog {
 
         return output;
     }
-    public void watchButtonClick() {
-        DefaultTableModel anothermodel = new DefaultTableModel(null ,new String[] {"Image Name", "PID", "Session Name", "Session#", "Mem Usage"});
+    private void watchButtonClick() {
+        DefaultTableModel anothermodel = new DefaultTableModel(null ,new String[] {"Image Name", "PID", "Session Name", "Session#", "Mem Usage"}){
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                //Only the third column
+                return false;
+            }
+        };
         table1.setModel(anothermodel);
+//        table1.setEnabled(false);
         String temp = "XEM";
         try {
             Program.nw.write(temp);
@@ -109,7 +131,7 @@ public class process extends JDialog {
                 while (!Objects.equals(line, "END_OF_SERVER_LIST"))
                 {
                     line = Program.nr.readLine();
-                    if (!line.equals("END_OF_SERVER_LIST") && !line.equals("\"Image Name\",\"PID\",\"Session Name\",\"Session#\",\"Mem Usage\"")) {
+                    if (!line.equals("END_OF_SERVER_LIST")) {
                         watchButtonClick_addtoRowFunc(csv_stringToArr(line));
 //                        task_data.add(csv_stringToArr(line));
                     }
@@ -130,16 +152,35 @@ public class process extends JDialog {
         }
     }
 
-    public void killButtonClick() {
+    private void killButtonClick() {
+        String temp = "KILL";
+        try {
+            Program.nw.write(temp);
+            Program.nw.newLine();
+            Program.nw.flush();
+        } catch (IOException e)
+        {
+            System.out.println(e);
+        }
+
+        Kill kill_dialog = new Kill();
+        kill_dialog.setVisible(true);
 
     }
 
-    public void clearViewButtonClick() {
 
-    }
-
-    public void startButtonClick() {
-
+    private void startButtonClick() {
+        String temp = "START";
+        try {
+            Program.nw.write(temp);
+            Program.nw.newLine();
+            Program.nw.flush();
+        } catch (IOException e)
+        {
+            System.out.println(e);
+        }
+        Start start_dialog = new Start();
+        start_dialog.setVisible(true);
     }
 
     // ------------------------- END OF FUNCTION --------------------------
