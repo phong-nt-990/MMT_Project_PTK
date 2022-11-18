@@ -20,12 +20,6 @@ public class listApp extends JDialog {
     }
 
     private void InitializeProcessComponent() {
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
-                 UnsupportedLookAndFeelException e) {
-            throw new RuntimeException(e);
-        }
         setContentPane(contentPane);
         setModal(true);
         getRootPane().setDefaultButton(watchButton);

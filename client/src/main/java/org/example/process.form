@@ -24,7 +24,7 @@
               <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Kill"/>
+              <text value="Kill Process"/>
             </properties>
           </component>
           <component id="b16c3" class="javax.swing.JButton" binding="startButton" default-binding="true">
@@ -34,7 +34,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="Start"/>
+              <text value="Start Process"/>
             </properties>
           </component>
           <component id="9c9ac" class="javax.swing.JButton" binding="watchButton">
@@ -44,7 +44,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="Xem"/>
+              <text value="Show Process"/>
             </properties>
           </component>
           <component id="cbd59" class="javax.swing.JButton" binding="clearViewButton">
@@ -54,7 +54,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="Xoá"/>
+              <text value="Clear"/>
             </properties>
           </component>
         </children>

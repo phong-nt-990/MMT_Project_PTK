@@ -24,7 +24,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="Chụp"/>
+              <text value="Take"/>
             </properties>
           </component>
           <component id="801b9" class="javax.swing.JButton" binding="butSaveScr">
@@ -35,7 +35,7 @@
               </grid>
             </constraints>
             <properties>
-              <text value="Lưu"/>
+              <text value="Save"/>
             </properties>
           </component>
           <vspacer id="84cb2">

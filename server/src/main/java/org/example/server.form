@@ -36,7 +36,7 @@
             </constraints>
             <properties>
               <iconTextGap value="4"/>
-              <text value="Mở Server"/>
+              <text value="Start Server"/>
             </properties>
           </component>
           <hspacer id="e6f03">

