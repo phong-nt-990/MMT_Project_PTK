@@ -29,7 +29,7 @@ public class listApp extends JDialog {
         table1.setModel(model);
 
         this.pack();
-        this.setTitle("Process Form");
+        this.setTitle("Application Form");
         killButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 killButtonClick();
@@ -86,13 +86,6 @@ public class listApp extends JDialog {
     private String[] csv_stringToArr(String input) {
         String tmp = input.substring(1, input.length() - 1);
         String[] output = tmp.split("\",\"");
-//        String[] tmp2 = null;
-//        tmp2 = tmp.split("\",\"");
-//        for (int i = 0; i < 3; i++)
-//        {
-//            output.add(tmp2[i]);
-//        }
-
         return output;
     }
 
@@ -100,38 +93,27 @@ public class listApp extends JDialog {
         DefaultTableModel anothermodel = new DefaultTableModel(null, new String[]{"Application Name", "ID", "Handle Count"}) {
             @Override
             public boolean isCellEditable(int row, int column) {
-                //Only the third column
                 return false;
             }
         };
         table1.setModel(anothermodel);
-//        table1.setEnabled(false);
         String temp = "XEM";
         try {
             Program.nw.write(temp);
             Program.nw.newLine();
             Program.nw.flush();
-//            String s1 = "name process";
-//            String s2 = "ID";
-//            String s3 = "count";
             String line = "";
             try {
                 while (!Objects.equals(line, "END_OF_SERVER_LIST")) {
                     line = Program.nr.readLine();
                     if (!line.equals("END_OF_SERVER_LIST")) {
                         watchButtonClick_addtoRowFunc(csv_stringToArr(line));
-//                        task_data.add(csv_stringToArr(line));
                     }
-//                    System.out.println(line);
-//                ObjectInputStream ois = new ObjectInputStream(Program.socketOfClient.getInputStream());
-//                Message m2 = (Message) ois.readObject();
                 }
                 line = "";
             } catch (IOException e) {
                 System.out.println(e);
             }
-//            temp = Program.nr.readLine();
-//            int soprocess =
 
         } catch (IOException e) {
             throw new RuntimeException(e);

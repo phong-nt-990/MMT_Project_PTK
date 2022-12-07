@@ -11,6 +11,53 @@
   <component name="ChangeListManager">
     <list default="true" id="19de4ec4-4274-4486-a813-52519930d154" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/client_jar/client.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/client_jar/client.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Keylog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Keylog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/listApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/listApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/process.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/process.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Keylog$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Keylog$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Keylog$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Keylog$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Keylog$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Keylog$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Keylog$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/Keylog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/Keylog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/client.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/client.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/listApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/listApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/pic$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/pic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/pic.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/process.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/process.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.idea/artifacts/server_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/artifacts/server_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/artifacts/server_jar/server.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/artifacts/server_jar/server.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/org/example/Keylog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/org/example/Keylog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/org/example/server.form" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/org/example/server.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/main/java/org/example/server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/main/java/org/example/server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/org/example/Keylog.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/org/example/Keylog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/org/example/server$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/target/classes/org/example/server.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/target/classes/org/example/server.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,10 +151,6 @@
       <workItem from="1668695856216" duration="1975000" />
       <workItem from="1668733432148" duration="4801000" />
       <workItem from="1668742425202" duration="10305000" />
-      <workItem from="1668826927595" duration="598000" />
-      <workItem from="1668851034692" duration="8000" />
-      <workItem from="1668866960662" duration="2179000" />
-      <workItem from="1669109324003" duration="8000" />
     </task>
     <servers />
   </component>

