@@ -1,10 +1,8 @@
 package org.example;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
-import java.lang.annotation.Native;
 
 public class Keylog extends JDialog {
     private JPanel contentPane;
@@ -27,27 +25,11 @@ public class Keylog extends JDialog {
         this.pack();
         this.setTitle("Keystroke Form");
 
-        hookButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                hookButtonClick();
-            }
-        });
+        hookButton.addActionListener(e -> hookButtonClick());
 
-        unhookButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                unhookButtonClick();
-            }
-        });
-        clearViewButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                clearViewButtonClick();
-            }
-        });
-        printKeyButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                printKeyButtonClick();
-            }
-        });
+        unhookButton.addActionListener(e -> unhookButtonClick());
+        clearViewButton.addActionListener(e -> clearViewButtonClick());
+        printKeyButton.addActionListener(e -> printKeyButtonClick());
 
         // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
@@ -58,11 +40,7 @@ public class Keylog extends JDialog {
         });
 
         // call onCancel() on ESCAPE
-        contentPane.registerKeyboardAction(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onCancel();
-            }
-        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+        contentPane.registerKeyboardAction(e -> onCancel(), KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
     private void hookButtonClick() {
@@ -77,8 +55,7 @@ public class Keylog extends JDialog {
 
         } catch (IOException e)
         {
-            System.out.println(e);
-
+            e.printStackTrace();
         }
     }
 
@@ -94,8 +71,7 @@ public class Keylog extends JDialog {
 
         } catch (IOException e)
         {
-            System.out.println(e);
-
+            e.printStackTrace();
         }
     }
 
@@ -119,16 +95,11 @@ public class Keylog extends JDialog {
                     textArea1.append("\n");
                 }
             }
-            line = "";
         } catch (IOException e)
         {
-            System.out.println(e);
-
+            e.printStackTrace();
         }
     }
-
-
-
 
     private void onCancel() {
         String s = "QUIT";
@@ -139,13 +110,6 @@ public class Keylog extends JDialog {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        // add your code here if necessary
         dispose();
     }
-
-//    public static void main(String[] args) {
-//        Keylog dialog = new Keylog();
-//        dialog.pack();
-//        dialog.setVisible(true);
-//        System.exit(0);
 }

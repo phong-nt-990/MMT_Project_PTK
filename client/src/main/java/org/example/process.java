@@ -2,16 +2,8 @@ package org.example;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableColumn;
-import java.awt.*;
 import java.awt.event.*;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.Arrays;
-import java.util.*;
-import java.util.List;
 import java.util.Objects;
 
 public class process extends JDialog {
@@ -21,8 +13,6 @@ public class process extends JDialog {
     private JButton watchButton;
     private JButton clearViewButton;
     private JTable table1;
-//    private Object[][] task_data_obj = {};
-//    private ArrayList<ArrayList<String>> task_data = new ArrayList<>(5);
 
     public process() {
         InitializeProcessComponent();
@@ -45,26 +35,10 @@ public class process extends JDialog {
 
         this.pack();
         this.setTitle("Process Form");
-        killButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                killButtonClick();
-            }
-        });
-        startButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                startButtonClick();
-            }
-        });
-        watchButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                watchButtonClick();
-            }
-        });
-        clearViewButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                clearViewButtonClick();
-            }
-        });
+        killButton.addActionListener(e -> killButtonClick());
+        startButton.addActionListener(e -> startButtonClick());
+        watchButton.addActionListener(e -> watchButtonClick());
+        clearViewButton.addActionListener(e -> clearViewButtonClick());
         // call onCancel() when cross is clicked
         setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
         addWindowListener(new WindowAdapter() {
@@ -73,11 +47,7 @@ public class process extends JDialog {
             }
         });
         // call onCancel() on ESCAPE
-        contentPane.registerKeyboardAction(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                onCancel();
-            }
-        }, KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+        contentPane.registerKeyboardAction(e -> onCancel(), KeyStroke.getKeyStroke(KeyEvent.VK_ESCAPE, 0), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     }
 
     // -------------------------- FUNCTION ------------------------------
@@ -98,17 +68,10 @@ public class process extends JDialog {
     }
     private String[] csv_stringToArr(String input){
         String tmp = input.substring(1, input.length()-1);
-        String[] output = tmp.split("\",\"");
-//        String[] tmp2 = null;
-//        tmp2 = tmp.split("\",\"");
-//        for (int i = 0; i < 3; i++)
-//        {
-//            output.add(tmp2[i]);
-//        }
-
-        return output;
+        return tmp.split("\",\"");
     }
     private void watchButtonClick() {
+        // Create table header
         DefaultTableModel anothermodel = new DefaultTableModel(null ,new String[] {"Image Name", "PID", "Session Name", "Session#", "Mem Usage"}){
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -117,15 +80,11 @@ public class process extends JDialog {
             }
         };
         table1.setModel(anothermodel);
-//        table1.setEnabled(false);
         String temp = "XEM";
         try {
             Program.nw.write(temp);
             Program.nw.newLine();
             Program.nw.flush();
-//            String s1 = "name process";
-//            String s2 = "ID";
-//            String s3 = "count";
             String line = "";
             try {
                 while (!Objects.equals(line, "END_OF_SERVER_LIST"))
@@ -133,19 +92,12 @@ public class process extends JDialog {
                     line = Program.nr.readLine();
                     if (!line.equals("END_OF_SERVER_LIST")) {
                         watchButtonClick_addtoRowFunc(csv_stringToArr(line));
-//                        task_data.add(csv_stringToArr(line));
                     }
-//                    System.out.println(line);
-//                ObjectInputStream ois = new ObjectInputStream(Program.socketOfClient.getInputStream());
-//                Message m2 = (Message) ois.readObject();
                 }
-                line = "";
             } catch (IOException e)
             {
-                System.out.println(e);
+                e.printStackTrace();
             }
-//            temp = Program.nr.readLine();
-//            int soprocess =
 
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -160,12 +112,10 @@ public class process extends JDialog {
             Program.nw.flush();
         } catch (IOException e)
         {
-            System.out.println(e);
+            e.printStackTrace();
         }
-
         Kill kill_dialog = new Kill();
         kill_dialog.setVisible(true);
-
     }
 
 
@@ -177,7 +127,7 @@ public class process extends JDialog {
             Program.nw.flush();
         } catch (IOException e)
         {
-            System.out.println(e);
+            e.printStackTrace();
         }
         Start start_dialog = new Start();
         start_dialog.setVisible(true);
@@ -195,8 +145,6 @@ public class process extends JDialog {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
         dispose();
-        // DISPOSE
     }
 }

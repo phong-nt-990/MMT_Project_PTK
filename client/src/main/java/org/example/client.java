@@ -1,8 +1,6 @@
 package org.example;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
@@ -27,65 +25,22 @@ public class client extends JFrame {
         this.pack();
         this.setTitle("Client Form");
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        takeScreenshotButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                butPic_Click();
-            }
-        });
-        connectButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                butConnect_Click();
-            }
-        });
-        shutdownButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                butShutdown_Click();
-            }
-        });
-        processRunningButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                processRunningButton_Click();
-            }
-        });
-        exitButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                butExit_Click();
-            }
-        });
-        appRunningButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                butApplicationList_Click();
-            }
-        });
-        keystrokeButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                keystrokeButton_Click();
-            }
-        });
+        takeScreenshotButton.addActionListener(e -> butPic_Click());
+        connectButton.addActionListener(e -> butConnect_Click());
+        shutdownButton.addActionListener(e -> butShutdown_Click());
+        processRunningButton.addActionListener(e -> processRunningButton_Click());
+        exitButton.addActionListener(e -> butExit_Click());
+        appRunningButton.addActionListener(e -> butApplicationList_Click());
+        keystrokeButton.addActionListener(e -> keystrokeButton_Click());
     }
     public client() {
         InitializeComponent();
     }
 
-
-//    public void appRuningButton_Clicked() {
-//        if (Program.socketOfClient == null) {
-//            JOptionPane.showMessageDialog(null, "Chưa kết nối đến server");
-//            return;
-//        }
-//        String sCommand = "APPLICATION";
-//        try {
-//            Program.nw.write(sCommand);
-//            Program.nw.flush();
-//        } catch (IOException e) {
-//            System.out.println(e);
-//        }
-//    }
-
     public void processRunningButton_Click() {
         if (Program.socketOfClient == null)
         {
-            JOptionPane.showMessageDialog(contentPane, "Chưa kết nối đến server");
+            JOptionPane.showMessageDialog(contentPane, "Not connect to server.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         String sCommand = "PROCESS";
@@ -95,7 +50,7 @@ public class client extends JFrame {
             Program.nw.flush();
         } catch (IOException e)
         {
-            System.out.println(e);
+            e.printStackTrace();
         }
         process viewapp = new process();
         viewapp.setVisible(true);
@@ -104,7 +59,7 @@ public class client extends JFrame {
     public void keystrokeButton_Click() {
         if (Program.socketOfClient == null)
         {
-            JOptionPane.showMessageDialog(contentPane, "Chưa kết nối đến server");
+            JOptionPane.showMessageDialog(contentPane, "Not connect to server.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         String sCommand = "KEYLOG";
@@ -114,7 +69,7 @@ public class client extends JFrame {
             Program.nw.flush();
         } catch (IOException e)
         {
-            System.out.println(e);
+            e.printStackTrace();
         }
         Keylog keylogviewapp = new Keylog();
         keylogviewapp.setVisible(true);
@@ -123,7 +78,7 @@ public class client extends JFrame {
     public void butPic_Click() {
         if (Program.socketOfClient == null)
         {
-            JOptionPane.showMessageDialog(contentPane, "Chưa kết nối đến server");
+            JOptionPane.showMessageDialog(contentPane, "Not connect to server.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         String sCommand = "TAKEPIC";
@@ -133,20 +88,17 @@ public class client extends JFrame {
             Program.nw.flush();
         } catch (IOException e)
         {
-            System.out.println(e);
+            e.printStackTrace();
         }
 
         pic pic_dialog = new pic();
         pic_dialog.lam();
-//        pic_dialog.setResizable(false);
-//        pic_dialog.setTitle("Take Screenshot Form");
-//        pic_dialog.pack();
         pic_dialog.setVisible(true);
     }
     public void butApplicationList_Click() {
         if (Program.socketOfClient == null)
         {
-            JOptionPane.showMessageDialog(contentPane, "Chưa kết nối đến server");
+            JOptionPane.showMessageDialog(contentPane, "Not connect to server.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         String sCommand = "APPLICATION";
@@ -156,7 +108,7 @@ public class client extends JFrame {
             Program.nw.flush();
         } catch (IOException e)
         {
-            System.out.println(e);
+            e.printStackTrace();
         }
         listApp listappDialog = new listApp();
         listappDialog.setVisible(true);
@@ -169,7 +121,7 @@ public class client extends JFrame {
                 Program.nw.newLine();
                 Program.nw.flush();
             } catch (IOException e) {
-                System.out.println(e);
+                e.printStackTrace();
             }
         }
         System.exit(1);
@@ -178,7 +130,7 @@ public class client extends JFrame {
     public void butShutdown_Click() {
         if (Program.socketOfClient == null)
         {
-            JOptionPane.showMessageDialog(contentPane, "Chưa kết nối đến server");
+            JOptionPane.showMessageDialog(contentPane, "Not connect to server.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
         String sCommand = "SHUTDOWN";
@@ -187,45 +139,34 @@ public class client extends JFrame {
                 Program.nw.newLine();
                 Program.nw.flush();
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
-
         try {
             Program.socketOfClient.close();
         } catch (IOException e)
         {
-            System.out.println(e);
+            e.printStackTrace();
         }
         Program.socketOfClient = null;
     }
 
     public void butConnect_Click() {
-        boolean test = true;
         try {
             SocketAddress ipServer = new InetSocketAddress(ipTextField.getText(), 5656);
             Program.socketOfClient = new Socket();
             Program.socketOfClient.connect(ipServer);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(contentPane, "Lỗi kết nối đến server");
+            JOptionPane.showMessageDialog(contentPane, "Error: Unable to connect to server.", "Error", JOptionPane.ERROR_MESSAGE);
             Program.socketOfClient = null;
-            test = false;
             return;
         }
-        if (test)
+        JOptionPane.showMessageDialog(contentPane, "Connect to server successfully.", "Success", JOptionPane.INFORMATION_MESSAGE);
+        try {
+            Program.nr = new BufferedReader(new InputStreamReader(Program.socketOfClient.getInputStream()));
+            Program.nw = new BufferedWriter(new OutputStreamWriter(Program.socketOfClient.getOutputStream()));
+        } catch (IOException e)
         {
-            JOptionPane.showMessageDialog(contentPane, "Kết nối đến server thành công");
-            try {
-                Program.nr = new BufferedReader(new InputStreamReader(Program.socketOfClient.getInputStream()));
-                Program.nw = new BufferedWriter(new OutputStreamWriter(Program.socketOfClient.getOutputStream()));
-            } catch (IOException e)
-            {
-                System.out.println(e);
-            }
+            e.printStackTrace();
         }
     }
-//    private void onOK() {
-//
-//    }
-
-
 }
