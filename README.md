@@ -1,4 +1,4 @@
-# ĐỒ ÁN GIỮA KỲ - LẬP TRÌNH JAVA SOCKET - MẠNG MÁY TÍNH
+# ĐỒ ÁN GIỮA KỲ - LẬP TRÌNH JAVA SOCKET - MẠNG MÁY TÍNH - CSC10008
 - [Thông tin chung](#i-thông-tin-chung)
 - [Mô tả chức năng](#ii-mô-tả-chức-năng)
 - [Thư viện, package liên quan](#iii-thư-viện-package-liên-quan)
