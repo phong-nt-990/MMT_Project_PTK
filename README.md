@@ -1,7 +1,7 @@
 # ĐỒ ÁN GIỮA KỲ - LẬP TRÌNH JAVA SOCKET - MẠNG MÁY TÍNH
-- [[#I. Thông tin chung|Thông tin chung]]
-- [[#II. Mô tả chức năng|Mô tả chức năng]]
-- [Thư viện, package liên quan](#thư-viện,package-liên-quan)
+- [Thông tin chung](#i-thông-tin-chung)
+- [Mô tả chức năng](#ii-mô-tả-chức-năng)
+- [Thư viện, package liên quan](#iii-thư-viện-package-liên-quan)
 ## I. Thông tin chung
 ---
 - Tên đồ án: Chương trình điều khiển máy tính từ xa
@@ -11,7 +11,7 @@
 - Hình thức nộp bài: Tìm hiểu + triển khai
 - GV phụ trách: Đỗ Hoàng Cường
 - Họ và tên thành viên tham gia:
-	- Nguyễn Thế Phong (Leader)
+	- Nguyễn Thế Phong 
 	- Nguyễn Anh Khôi
 	- Nguyễn Văn Trí
 ## II. Mô tả chức năng
@@ -29,3 +29,52 @@
 - Java net
 - Java awt
 - Javax Imageio
+## IV. Tổ chức file, source code
+- Client
+```
+Client
+├───.idea
+│   └───artifacts
+├───out
+│   └───artifacts
+│       └───client_jar
+├───src
+│   └───main
+│       └───java
+│           └───org
+│               └───example
+└───target
+    └───classes
+        ├───com
+        │   └───intellij
+        │       └───uiDesigner
+        │           └───core
+        └───org
+            └───example
+```
+- Server
+```
+Server
+├───.idea
+│   ├───artifacts
+│   └───libraries
+├───out
+│   └───artifacts
+│       └───server_jar
+├───src
+│   └───main
+│       ├───java
+│       │   └───org
+│       │       └───example
+│       └───resources
+│           └───META-INF
+└───target
+    └───classes
+        ├───com
+        │   └───intellij
+        │       └───uiDesigner
+        │           └───core
+        ├───META-INF
+        └───org
+            └───example
+```
